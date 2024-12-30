@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Your HTML head content (e.g., CSS and JavaScript references) goes here -->
+</head>
+<body>
+  <form action="/index" method="post">
+    <input type="text" placeholder="enter value" name="value1">
+    <div>
+      <h2>From</h2>
+      <select name="d1">
+        <% for(const currency in rates) { %>
+        <option>
+          <%= currency %>
+        </option>
+        <% } %>
+      </select>
+    </div>
+    <div>
+      <h2>To</h2>
+      <select name="d2">
+        <% for (const currency in rates) { %>
+        <option>
+          <%= currency %>
+        </option>
+        <% } %>
+      </select>
+    </div>
+    <div>
+      <h2><%= typeof r !== 'undefined' ? r : '' %></h2>
+      <button>Convert</button>
+    </div>
+  </form>
+</body>
+</html>
